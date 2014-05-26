@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="eu" ng-app="olatutalkaApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLATU TALKA 2014 | Guía Web Gida</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="lib/angularsnapjs/angular-snap.css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css">
+    <link rel="stylesheet" href="lib/leaflet/MarkerCluster.Default.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.0/leaflet.awesome-markers.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css"/>
+  </head>
+  <body>
+
+    <div ui-view></div>
+
+    <script src="lib/angularjs/angular.min.js"></script>
+    <script src="lib/angular-ui/angular-ui-router.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+    <script src="/lib/angularjs/angular-leaflet-directive.js"></script>
+    <script type="text/javascript" src="/lib/leaflet/leaflet.markercluster-src.js"></script>
+    
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
+    <script type="text/javascript" src="lib/snapjs/snap.min.js"></script>
+    <script type="text/javascript" src="lib/angularsnapjs/snap.js"></script>
+    <script type="text/javascript" src="lib/moment/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.0/leaflet.awesome-markers.min.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+
+      (function() {
+        var u=(("https:" == document.location.protocol) ? "https" : "http") + "://stats.baibalab.net/";
+        _paq.push(["setTrackerUrl", u+"piwik.php"]);
+        _paq.push(["setSiteId", "3"]);
+        var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+        g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Piwik Code -->
+
+  </body>
+</html>

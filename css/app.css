@@ -1,0 +1,293 @@
+html, body {
+   height: 100%;
+}
+
+.navbar-default {
+	background: none;
+	border:0;
+}
+
+snap-content {
+	background: #fff;
+}
+snap-drawer {
+	background: #0098CF;
+}
+
+snap-drawer p, snap-drawer h4, snap-drawer label {
+    color:#fff;
+}
+
+snap-drawer p a{
+    color:#fff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.navbar-default .navbar-brand {
+    color: #0098CF;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #0098CF;
+}
+
+.dropdown-menu > li > a {
+	color: #0098CF;
+}
+
+.scrollable {
+    overflow: auto;
+    transition-duration: 0.2s, 0.2s;
+    transition-property: top, bottom;
+    transition-timing-function: linear, linear;
+}
+
+
+.goi-apar {
+    /*background-image: url("/css/aparra.png");*/
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.goiburua {
+    z-index: 99999;
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    position: fixed;
+    width: 100%;
+    padding:10px;
+}
+
+.list-group-item {
+    padding: 10px 10px 0px 10px;
+    margin-bottom: 0;
+    background-color: #FFF;
+    border-width: 0 0 1px 0;
+}
+
+.eguna {
+    font-size:50px;
+    font-weight: bold;
+    line-height: 45px;
+}
+
+.ordua {
+    text-align:center;
+    padding:0;
+    display:inline-block;
+}
+
+.ordutegia {
+    text-align:center;
+    margin-right: 10px;
+    margin-bottom:10px;
+    background: #0098CF;
+    border-radius:5px;
+    padding:5px;
+    color:#fff;
+}
+
+.ordutegia p {
+    margin:0;
+}
+
+.btn-olatutalka {
+    color:#0098CF;
+    /*border-color:#0098CF;*/
+    border-color: #ccc;
+    font-weight: bold;
+}
+
+
+.btn-android {
+    color:#fff;
+    background-color: #a4c639;
+    border-color: #a4c639;
+    font-weight: bold;
+}
+
+.btn-olatutalka.active {
+    color:#FFF;
+    background-color:#0098CF;
+    border-color:#0098CF;
+}
+
+.alert-olatutalka {
+    background-color: #0098CF;
+    border-color: #0098CF;
+    color: #fff;
+    padding:10px;
+    border-radius:5px;
+}
+
+.alert-olatutalka a{
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+ul {
+    margin-bottom: 0;
+}
+
+
+
+
+.talkalive {
+    background: #0098CF;
+    color:#fff;
+}
+
+.talkalive h4 small {
+    color: #ddd;
+}
+
+.talkalive  .orgutegia {
+    background: #fff!important;
+    color: #0098CF!important;
+}
+
+
+.leaflet-popup-content p {
+    margin: 5px 0px;
+}
+
+
+.android-abixua {
+    background: #eee;
+    display: block;
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+#movingBallG{
+position:relative;
+width:40px;
+height:3px;
+}
+
+.movingBallLineG{
+position:absolute;
+left:0px;
+top:1px;
+height:1px;
+width:40px;
+background-color:#BDBBBD;
+}
+
+.movingBallG{
+background-color:#000000;
+position:absolute;
+top:0;
+left:0;
+width:3px;
+height:3px;
+-moz-border-radius:2px;
+-moz-animation-name:bounce_movingBallG;
+-moz-animation-duration:1.3s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:linear;
+-webkit-border-radius:2px;
+-webkit-animation-name:bounce_movingBallG;
+-webkit-animation-duration:1.3s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-ms-border-radius:2px;
+-ms-animation-name:bounce_movingBallG;
+-ms-animation-duration:1.3s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+-o-border-radius:2px;
+-o-animation-name:bounce_movingBallG;
+-o-animation-duration:1.3s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:linear;
+border-radius:2px;
+animation-name:bounce_movingBallG;
+animation-duration:1.3s;
+animation-iteration-count:infinite;
+animation-direction:linear;
+}
+
+@-moz-keyframes bounce_movingBallG{
+0%{
+left:0px;
+}
+
+50%{
+left:37px;
+}
+
+100%{
+left:0px;
+}
+
+}
+
+@-webkit-keyframes bounce_movingBallG{
+0%{
+left:0px;
+}
+
+50%{
+left:37px;
+}
+
+100%{
+left:0px;
+}
+
+}
+
+@-ms-keyframes bounce_movingBallG{
+0%{
+left:0px;
+}
+
+50%{
+left:37px;
+}
+
+100%{
+left:0px;
+}
+
+}
+
+@-o-keyframes bounce_movingBallG{
+0%{
+left:0px;
+}
+
+50%{
+left:37px;
+}
+
+100%{
+left:0px;
+}
+
+}
+
+@keyframes bounce_movingBallG{
+0%{
+left:0px;
+}
+
+50%{
+left:37px;
+}
+
+100%{
+left:0px;
+}
+
+}

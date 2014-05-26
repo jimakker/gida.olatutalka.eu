@@ -1,0 +1,22 @@
+<h1>{{activity.texts[language].title}}</h1>
+<h4 class="text-muted" style="text-transform:uppercase;">{{activity.city.texts[language].title}} <span ng-show="activity.district">| {{activity.district.texts[language].title}}</span></h4>
+<div class="pull-left">
+	<div ordutegia></div>
+</div>
+	<p>
+		<span ng-repeat="category in activity.categories" class="label label-primary" style="margin-right:5px;">{{category.texts[language].title}}</span>
+	</p>
+	<ul class="list-inline"><li ng-repeat="target in activity.targets"><span class="label label-warning">{{target.texts[language].title}}</span></li></ul>
+<p class="lead">{{activity.texts[language].description}}</p>
+<div class="clearfix"></div>
+<div class="alert alert-olatutalka lead">
+	<ul class="list-unstyled">
+		<li ng-show="activity.venue">{{'place'|texts}}: <strong>{{activity.venue.texts[language].title}}</strong> ({{activity.venue.texts[language].street}})</li>
+		<li ng-hide="activity.venue">{{'place'|texts}}: <strong>{{activity.texts[language].street}}</strong></li>		
+		<li ng-show="activity.organizator">{{'organizator'|texts}}: <strong>{{activity.organizator}}</strong></li>
+		<li ng-show="activity.link">{{'link'|texts}}: <a ng-href="{{activity.link}}">{{activity.link}}</a></li>
+	</ul>
+</div>
+
+
+<leaflet id="detailMap" style="height:300px;" defaults="defaults" markers="marker" center="center"></leaflet>

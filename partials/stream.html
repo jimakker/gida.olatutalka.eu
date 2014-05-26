@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <li class="clearfix list-group-item" ng-repeat="photo in photos" style=" padding-bottom: 5px;">
+	<img ng-src="{{photo.photo.src}}" class="img-responsive"/>
+  	<div style="padding:5px;margin-top:5px; background:#eee;">
+  		<img ng-src="{{photo.user.img}}" width="25" class="pull-rigth"/> <a target="_blank" ng-href="https://twitter.com/{{photo.user.fullName}}">@{{photo.user.fullName}}</a> <small class="text-muted">{{photo.createdAt | fromNow}}</small>
+  	</div>
+  	<small class="text-muted">{{photo.text}}</small>
+  </li>
+</ul>

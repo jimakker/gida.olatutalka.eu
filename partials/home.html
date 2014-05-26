@@ -1,0 +1,90 @@
+  <div class="navbar navbar-default goiburua">
+    <div class="navbar-inner">
+      <div class="container-fluid" style="padding-left:0;padding-right:0;">
+        <div class="navbar-header">
+
+          <div class="navbar-brand">
+            <button class="btn btn-default btn-xs btn-olatutalka" snap-toggle="left">MENU</button>
+            <a class="navbar-brand" style="font-weight:bold;" ui-sref="sarrera.list">OlatuTalka <span class="text-danger">!!!</span></a>
+            <a ui-sref="sarrera.about" class="pull-right btn btn-default btn-xs btn-olatutalka"> ? </a>
+            <button ng-click="language='eu';changeLanguage();" class="{{language==='eu'? 'active':''}} pull-right btn btn-default btn-xs btn-olatutalka" style="margin-right:5px;">EU</button>
+            <button ng-click="language='es';changeLanguage();" class="{{language==='es'? 'active':''}} pull-right btn btn-default btn-xs btn-olatutalka" style="margin-right:5px;">ES</button>
+            <a ui-sref="sarrera.stream" style="margin-right:5px;" class="pull-right btn btn-default btn-xs btn-olatutalka" style="margin-right:5px;"><i class="fa fa-camera"></i></a>            
+            <a ui-sref="sarrera.android" style="margin-right:5px;" class="pull-right btn btn-default btn-xs btn-olatutalka" style="margin-right:5px;"><i class="fa fa-android" style="color:#a4c639;"></i></a>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <snap-drawer class="snap-drawer-left goi-apar" >
+      <div style="padding:55px 10px 0 10px;">
+        <div class="btn-group btn-group-justified">
+          <a ui-sref="sarrera.list" class="btn btn-xs btn-default btn-olatutalka">{{'list'|texts}}</a>
+          <a ui-sref="sarrera.map" class="btn btn-xs btn-default btn-olatutalka">{{'map'|texts}}</a>
+          <span class="btn btn-xs btn-default btn-olatutalka" snap-close>{{'close'|texts}}</span>
+        </div>
+
+        <h4>{{'filters' | texts}} <span ng-click="filtersReset()" class="btn btn-xs btn-default btn-olatutalka">reset</span></h4>
+
+          <div class="btn-group btn-group-justified" style="margin-bottom:10px;">
+            <span ng-click="now()" class="btn btn-sm btn-default btn-olatutalka {{filters.now?'active':''}}">{{'now'|texts}}</span>
+            <span ng-click="soon()" class="btn btn-sm btn-default btn-olatutalka {{filters.soon?'active':''}}">{{'soon'|texts}}</span>
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <input ng-change="searchChanged()" type="text" class="form-control input-sm" ng-model="search" placeholder="{{'search'|texts}}...">
+              <span class="input-group-btn">
+                <button ng-click="search='';searchChanged();" class="btn btn-sm btn-default btn-olatutalka" type="button">X</button>
+              </span>
+            </div><!-- /input-group -->
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only">{{'day' | texts}}</label>
+            <select class="form-control input-sm" ng-model="filters.days" ng-change="filtersChange()">
+              <option value="">{{'allDays' | texts}}</option>
+              <option value="1">{{'day1'|texts}}</option>
+              <option value="2">{{'day2'|texts}}</option>
+              <option value="3">{{'day3'|texts}}</option>
+              <!-- <option value="4">Ekainak 1</option> -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only">{{'target' | texts}}</label>
+            <select class="form-control input-sm" ng-model="filters.targets" ng-options="t.texts[language].title for t in targets" ng-change="filtersChange()">
+              <option value="">{{'allTargets' | texts}}</option>
+            </select>
+          </div>            
+
+        <div class="form-group">
+          <label class="sr-only">{{'category' | texts}}</label>
+          <select class="form-control input-sm" ng-model="filters.categories" ng-change="filtersChange()" ng-options="c.texts[language].title for c in categories | orderBy:c.texts[language].title">
+            <option value="">{{'allCategories' | texts}}</option>
+          </select>
+        </div>      
+        <div class="form-group">
+          <label class="sr-only">{{'city' | texts}}</label>
+          <select class="form-control input-sm" ng-model="filters.cities" ng-change="filtersChange()" ng-options="c.texts[language].title for c in cities">
+            <option value="">{{'allCities' | texts}}</option>
+          </select>
+        </div> 
+        <div class="form-group" ng-hide="filters.cities&&filters.cities.districts.length===0">
+          <label class="sr-only">{{'district' | texts}}</label>
+          <select class="form-control input-sm" ng-model="filters.districts" ng-change="filtersChange()" ng-options="d.texts[language].title for d in districts">
+            <option value="">{{'allDistricts' | texts}}</option>
+          </select>
+        </div>        
+        <p class="lead"> = {{filtered.length}} {{'activities' | texts}}</p>
+
+        <a href="http://olatutalka.eu"><img class="img-responsive" src="/logoapp.png"/></a>
+
+      </div>
+    </snap-drawer>
+
+  <snap-content id="scrollArea" style="margin-top:42px;" class="scrollable" snap-options="{disable: 'right'}" lr-infinite-scroll="infScrollEvent" scroll-threshold="400">
+    <div class="container-fluid" style="height:100%">
+      <div ui-view style="height:100%;"></div>
+    </div> <!-- Container-->
+   </snap-content> 

@@ -1,0 +1,16 @@
+<h1>SEARCH:</h1>
+
+<div class="panel panel-default" ng-repeat="city in searchs | orderBy:'name'">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-4">
+				<canvas id="now-icon-{{$index}}" width="70" height="70" weather-icon="{{city.weather[0].icon}}" now="true" skycon></canvas>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
+				 <h4 style="margin:0;font-weight:bold;">{{city.name}} ({{city.sys.country}})</h4>
+				 <b>{{city.main.temp}}ºC</b><br/>
+				 <span class="btn btn-default" ng-click="addCity(city)">Add City</span>
+			</div>
+		</div>
+	</div>
+</div>

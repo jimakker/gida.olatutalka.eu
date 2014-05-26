@@ -1,0 +1,42 @@
+<div class="alert-olatutalka" ng-bind-html="'disclaimer'|texts">
+</div>
+
+<ul class="list-group">
+  <li class="clearfix list-group-item {{activity.categories[0].id=='536e07774892a06a67e2810e'? 'talkalive':''}}" ng-repeat="activity in scrollingActivities">
+
+    <h4 class="list-group-item-heading">{{activity.texts[language].title}} <small>{{activity.city.texts.eu.title}}</small> <small ng-show="activity.district"> | {{activity.district.texts[language].title}}</small></h4>
+      
+    <div class="pull-left">
+      <div ordutegia></div>
+    </div>
+
+    <div class="pull-right">
+      <a class="btn btn-default btn-olatutalka" ui-sref="sarrera.details({id:activity.id})">{{'view'|texts}}</a>
+    </div>
+    <div ng-hide="activity.categories[0].id=='536e07774892a06a67e2810e'">
+      <p class="list-group-item-text lead">{{activity.texts[language].excerpt}}</p>
+     
+      <ul class="list-inline">
+        <li ng-repeat="category in activity.categories">
+          <span class="label label-primary">{{category.texts[language].title}}</span>
+        </li>
+        <li ng-repeat="target in activity.targets | allTargets">
+          <span class="label label-warning">{{target.texts[language].title}}</span>
+        </li>
+      </ul>
+    </div>
+    <div ng-show="activity.categories[0].id=='536e07774892a06a67e2810e'">
+      <img src="talkalive.png" width="50"/>
+    </div>
+    
+  </li>
+  <li class="clearfix list-group-item" ng-show="loading" style="background:#eee;">
+     <div id="movingBallG">
+    <div class="movingBallLineG">
+    </div>
+    <div id="movingBallG_1" class="movingBallG">
+    </div>
+    </div>   
+     Loading...
+  </li>
+</ul>
